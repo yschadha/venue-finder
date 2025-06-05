@@ -2,7 +2,7 @@ import { formatLocation } from './data.js';
 import { deleteUserListing } from './storage.js';
 import { loadMyListings } from './myListings.js';
 
-// Render venue cards in a container
+
 function renderVenues(venues, container, isMyListings = false) {
     if (!container) return;
     
@@ -41,7 +41,7 @@ function renderVenues(venues, container, isMyListings = false) {
         container.appendChild(venueCard);
     });
     
-    // Add event listeners for delete buttons if on My Listings tab
+    
     if (isMyListings) {
         const deleteButtons = container.querySelectorAll('.delete-btn');
         deleteButtons.forEach(button => {
@@ -54,17 +54,17 @@ function renderVenues(venues, container, isMyListings = false) {
     }
 }
 
-// Custom confirmation dialog function
+
 const customConfirm = (message) => {
     return window.confirm(message);
 };
 
-// Handle venue deletion
+
 function deleteVenue(venueId) {
     if (customConfirm('Are you sure you want to delete this listing?')) {
         deleteUserListing(venueId);
         
-        // Reload the My Listings tab
+        
         loadMyListings();
     }
 }
