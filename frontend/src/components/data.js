@@ -1,4 +1,4 @@
-// Sample venue data for initial display
+// Sample venue data 
 const sampleVenues = [
     {
         id: 'sample1',

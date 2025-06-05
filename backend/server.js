@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
-const venueRoutes = require('./routes/venues');
 const authRoutes = require('./routes/auth');
+const venueRoutes = require('./routes/venues');
 
 const app = express();
 
@@ -13,6 +13,11 @@ connectDB();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Test route
+app.get('/test', (req, res) => {
+    res.json({ message: 'Server is running' });
+});
 
 // Routes
 app.use('/api/auth', authRoutes);
