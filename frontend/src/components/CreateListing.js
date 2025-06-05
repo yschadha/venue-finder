@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { saveUserListing } from '../services/storage';
 import './CreateListing.css';
-
+// create listing functionality
 const CreateListing = () => {
     const navigate = useNavigate();
     const [formData, setState] = useState({
