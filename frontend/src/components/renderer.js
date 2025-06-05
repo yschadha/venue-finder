@@ -54,9 +54,14 @@ function renderVenues(venues, container, isMyListings = false) {
     }
 }
 
+// Custom confirmation dialog function
+const customConfirm = (message) => {
+    return window.confirm(message);
+};
+
 // Handle venue deletion
 function deleteVenue(venueId) {
-    if (confirm('Are you sure you want to delete this listing?')) {
+    if (customConfirm('Are you sure you want to delete this listing?')) {
         deleteUserListing(venueId);
         
         // Reload the My Listings tab
